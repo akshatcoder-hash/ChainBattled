@@ -6,4 +6,6 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 
-contract ChainBattles is ERC721URIStorage
+contract ChainBattles is ERC721URIStorage {
+    using Strings for uint256;
+}
