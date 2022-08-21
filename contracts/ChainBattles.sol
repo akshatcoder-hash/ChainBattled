@@ -32,5 +32,7 @@ contract ChainBattles is ERC721URIStorage {
             Base64.encode(svg)
         )    
     );
-}
+  }
+
+
 }
