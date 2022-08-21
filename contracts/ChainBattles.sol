@@ -32,7 +32,7 @@ contract ChainBattles is ERC721URIStorage {
             Base64.encode(svg)
         )    
     );
-  }
+   }
     function getLevels(uint256 tokenId) public view return(string memory){
         uint256 levels = tokenIdtoLevels[tokenId]
         return levels.toString()
@@ -51,6 +51,14 @@ contract ChainBattles is ERC721URIStorage {
             Base64.encode(dataURI)
         )
     );
-}
+  }
+
+  function mint() public{
+    _tokenIds.increment();
+    uint256 newItemId = _tokenIds.current();
+    _safemint(msg.sender, newItemId);
+    tokenIdtoLevels[newItemId] = 0;
+    -setTokenURI(newItemId, getTokenURI(newItemId))
+  }
 
 }
