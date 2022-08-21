@@ -17,5 +17,7 @@ contract ChainBattles is ERC721URIStorage {
 
     }
 
-    
+    function generateCharacter(uint256 tokenId) public returns (string memory){
+        
+    }
 }
