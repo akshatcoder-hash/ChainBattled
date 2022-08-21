@@ -62,7 +62,7 @@ contract ChainBattles is ERC721URIStorage {
   }
 
   function train(uint256 tokenId) public {
-    
+    require(_exists(tokenId), "Please use an existing Token");
   }
 
 }
