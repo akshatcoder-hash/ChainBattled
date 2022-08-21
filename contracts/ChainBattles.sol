@@ -61,4 +61,8 @@ contract ChainBattles is ERC721URIStorage {
     -setTokenURI(newItemId, getTokenURI(newItemId))
   }
 
+  function train(uint256 tokenId) public {
+    
+  }
+
 }
