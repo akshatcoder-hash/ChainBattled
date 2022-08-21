@@ -8,4 +8,14 @@ import "@openzeppelin/contracts/utils/Base64.sol";
 
 contract ChainBattles is ERC721URIStorage {
     using Strings for uint256;
+    using Counters for Counters.Counter;
+    Counets.Counter private _tokenIds;
+
+    mapping(uint = uint256) public tokenIdtoLevels;
+
+    constructor() ERC721("Chain Battles","CBTLS"){
+
+    }
+
+    
 }
