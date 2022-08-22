@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/utils/Base64.sol";
 contract ChainBattles is ERC721URIStorage {
     using Strings for uint256;
     using Counters for Counters.Counter;
-    Counets.Counter private _tokenIds;
+    Counters.Counter private _tokenIds;
 
     mapping(uint => uint256) public tokenIdtoLevels;
 
@@ -56,16 +56,16 @@ contract ChainBattles is ERC721URIStorage {
   function mint() public{
     _tokenIds.increment();
     uint256 newItemId = _tokenIds.current();
-    _safemint(msg.sender, newItemId);
+    _safeMint(msg.sender, newItemId);
     tokenIdtoLevels[newItemId] = 0;
-    -setTokenURI(newItemId, getTokenURI(newItemId));
+    _setTokenURI(newItemId, getTokenURI(newItemId));
   }
 
   function train(uint256 tokenId) public {
     require(_exists(tokenId), "Please use an existing Token");
     require(ownerOf(tokenId) == msg.sender, "You must own this token to train it");
     uint256 currentLevel = tokenIdtoLevels[tokenId];
-    tokenIdtoLevels[tokenId] = currentLevels + 1;
+    tokenIdtoLevels[tokenId] = currentLevel + 1;
     _setTokenURI(tokenId, getTokenURI(tokenId));
   }
 

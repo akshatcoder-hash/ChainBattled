@@ -1,14 +1,17 @@
-const main = async () = {
+const main = async () => {
   try {
-    const nftContractFactory = await Headers.ethers.getContractFactory("ChainBattles");
+    const nftContractFactory = await hre.ethers.getContractFactory(
+      "ChainBattles"
+    );
     const nftContract = await nftContractFactory.deploy();
-    await.nftContract.deployed();
+    await nftContract.deployed();
 
-    console.log("Contract Deployed to :", nftContract.address);
+    console.log("Contract deployed to:", nftContract.address);
     process.exit(0);
   } catch (error) {
-    process.exit(1)
+    console.log(error);
+    process.exit(1);
   }
 };
-
+  
 main();
