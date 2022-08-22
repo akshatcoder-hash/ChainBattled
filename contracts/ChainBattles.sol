@@ -34,8 +34,8 @@ contract ChainBattles is ERC721URIStorage {
     );
    }
     function getLevels(uint256 tokenId) public view returns (string memory){
-        uint256 levels = tokenIdtoLevels[tokenId]
-        return levels.toString()
+        uint256 levels = tokenIdtoLevels[tokenId];
+        return levels.toString();
     }
     function getTokenURI(uint256 tokenId) public returns (string memory){
     bytes memory dataURI = abi.encodePacked(
@@ -58,7 +58,7 @@ contract ChainBattles is ERC721URIStorage {
     uint256 newItemId = _tokenIds.current();
     _safemint(msg.sender, newItemId);
     tokenIdtoLevels[newItemId] = 0;
-    -setTokenURI(newItemId, getTokenURI(newItemId))
+    -setTokenURI(newItemId, getTokenURI(newItemId));
   }
 
   function train(uint256 tokenId) public {
@@ -66,7 +66,7 @@ contract ChainBattles is ERC721URIStorage {
     require(ownerOf(tokenId) == msg.sender, "You must own this token to train it");
     uint256 currentLevel = tokenIdtoLevels[tokenId];
     tokenIdtoLevels[tokenId] = currentLevels + 1;
-    _setTokenURI(tokenId, getTokenURI(tokenId))
+    _setTokenURI(tokenId, getTokenURI(tokenId));
   }
 
 }
