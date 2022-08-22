@@ -6,5 +6,9 @@ const main = async () = {
 
     console.log("Contract Deployed to :", nftContract.address);
     process.exit(0);
-  } catch (error)
-}
+  } catch (error) {
+    process.exit(1)
+  }
+};
+
+main();
